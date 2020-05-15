@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Feedback</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="images/img-01.png" alt="IMG">
+			</div>
+
+                    <form class="contact1-form validate-form" action ="feed.jsp">
+				<span class="contact1-form-title">
+					Provide Your Valuable Feedback
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<input class="input1" id="feed" type="text" name="name" placeholder="Name">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input1" type="text" name="email" placeholder="Email" required>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div> 	
+					<label for="Course: "> Course:   </label>
+					
+					   <select id="Courses" name="Courses">
+		              <option value=" B-tech">B-Tech</option>
+		               <option value=" B-Sc">B-Sc</option>
+		               <option value=" B.A">B.A</option>
+	            </select>
+	          <br>
+				</div>
+				<br>
+				<div class="rating">
+					<label>How will you rate your Overall experience?</label> <br>
+					<br>
+					<p>
+						<label class="radio-inline">
+						<input type="radio" name="experience" id="radio_experience" value="bad" >
+						Bad
+                                                </label>
+
+						<label class="radio-inline">
+							<input type="radio" name="experience" id="radio_experience" value="average" >
+							Average
+							</label>
+		
+							<label class="radio-inline">
+							<input type="radio" name="experience" id="radio_experience" value="good" >
+							Good
+							</label>
+					
+					</p>	
+					<br>
+				</div>	
+
+				<div class="wrap-input1 validate-input" data-validate = "Message is required">
+                                    <textarea class="input1" name="Feedback" placeholder="Type in Your Feedback" maxlength="500" required></textarea>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+                                    <button class="contact1-form-btn" onclick="validate()">
+                                        <script>
+                                            function validate(){
+                                                let x,y,z;
+                                                x= document.getElementsByName("name")[0].value;
+                                                y= document.getElementsByName("email")[0].value;
+                                                z= document.getElementsByName("Feedback")[0].value;
+                                                if (x.length==0){
+                                                    alert("Please Enter a Name");
+                                                    return (false); //exit from name 
+                                                }
+                                                if (y.length==0){
+                                                    alert("Please Enter an email");
+                                                    return (false); //exit from email 1 
+                                                }
+                                                 if(y.length>=30){
+                                                            alert("Please enter a Valid email");
+                                                        return(false); //exit from email2
+                                                    }
+                                                        // exit2 from name
+                                                        if(x.length>=30){
+                                                            alert("Please enter a Valid name");
+                                                        return(false); //exit2 from name
+                                                    }
+                                                    if (z.length==0){
+                                                    alert("Please Enter feedback");
+                                                    return (false); //exit from feedback
+                                                }
+                                                if(z.length>=30){
+                                                            alert("Feedback too long,enter a summarised one");
+                                                        return(false); //exit from email2
+                                                    }
+                                                
+                                            }
+                                            
+                                        </script>
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+                   
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="JavaScript/jquery-1.6.1.min.js" type="text/javascript"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
